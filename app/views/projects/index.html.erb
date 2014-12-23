@@ -1,0 +1,11 @@
+<p>
+	<h1>Projects Listing</h1> / <%= link_to 'Create New Project', new_project_path %>
+</p>
+
+<% @project.each do |f| %>
+	<p>
+		<h2>
+			<%= link_to f.name, project_path(f) %>
+		</h2>
+	</p>
+<%end%>

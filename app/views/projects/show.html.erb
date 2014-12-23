@@ -1,0 +1,17 @@
+<h1>
+	PROJECT: <%= @project.name %> / <%=link_to 'Edit', edit_project_path(@project) 
+	%>
+</h1>	
+<h2> Tasks within this project</h2><br>
+<%= link_to "Create a new task", new_project_task_path(@project) %>
+<p>
+
+<% @project.tasks.each do |f| %>	
+		<%= link_to f.name, project_task_path(@project,f) %> / 
+		<%= link_to 'Destroy task', project_task_path(@project,f), method: :delete, data:{ confirm: "Are you sure?"} %><br>
+<% end %>
+
+</p>
+
+<%= link_to 'Back to listing', projects_path %> <br>
+<%= link_to 'Destroy Project', project_path(@project), method: :delete, data: {confirm: "Are you sure?"} %>

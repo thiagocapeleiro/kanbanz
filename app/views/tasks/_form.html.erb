@@ -1,0 +1,7 @@
+<%= form_for ([@project, @project.tasks.build])  do |f| %>
+	Task name: <%= f.text_field :name %><br>
+	Priority: <%= f.text_field :priority %><br>
+	Status: <%= f.text_field :status %><br>
+	Due date: <%= f.text_field :due_date %><br><br>
+	<%= f.submit %>
+<% end %>

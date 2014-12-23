@@ -1,0 +1,13 @@
+Listing tasks | <%= link_to "New task" ,new_task_path %>
+
+<% @tasks.each do |f| %>
+	<p><h1><%= link_to f.name, task_path(f)%> | <%=link_to 'Edit', edit_task_path(f)%></h1><br>
+	ID: <%= f.id %><br>
+	STATUS: <%= f.status %><br>
+	DUE DATE: <%= f.due_date %><br>
+	PRIORIRY: <%= f.priority %><br>
+	CREATED AT: <%= f.created_at %><br>
+	UPDATED AT: <%= f.updated_at %><br>
+	<%= link_to 'Destroy task', task_path(f), method: :delete, data: {confirm: "Are you sure?"} %>
+	<hr></p>
+<% end %>
